@@ -1,0 +1,104 @@
+Phạm Đăng Hải
+['Tính toán hiệu năng cao', 'Mô phỏng song song và phân tán', 'Hệ điều hành nhúng']
+Nguyễn Khanh Văn
+['Mô hình-thuật toán mạng và tính toán phân tán', 'Mạng máy tính', 'An toàn thông tin']
+Lê Tấn Hùng
+['Đồ họa máy tính, đa phương tiện', 'Thương mại điện tử ', 'Hệ thống thông tin / Erp / MRP', 'Đổi mới và khởi nghiệp']
+Nguyễn Hữu Đức
+['Tính toán song song và phân tán', 'Lưu trữ và phân tích dữ liệu lớn', 'Xây dựng chương trình dịch']
+Phạm Văn Hải
+['Ứng dụng trí tuệ nhân tạo (Chuyển đổi số, cách mạng công nghiệp 4.0)', 'Học máy', 'Tính toán mềm', 'Phân tích dữ liệu lớn', 'Ứng dụng hệ mờ, logics', 'Hệ thống thông minh lai; Tích hợp hệ thống']
+Vũ Tuyết Trinh
+['Quản trị và phân tích dữ liệu', 'Hệ phân tán', 'Tích hợp']
+Huỳnh Thị Thanh Bình
+['Trí tuệ nhân tạo', 'Thuật toán và tối ưu']
+Vũ Văn Thiệu
+['Trí tuệ nhân tạo', 'Hệ gợi ý', 'Tính toán hiệu năng cao']
+Cao Tuấn Dũng
+['Web ngữ nghĩa', 'Web và dịch vụ Web', 'Biểu diễn và quản lý tri thức', 'Tính toán di động - cảm ngữ cảnh', 'Dữ liệu liên kết mở']
+Vũ Thị Hương Giang
+['Công nghệ Phần mềm', 'An toàn Thông tin', 'Tương tác người máy']
+Lê Thanh Hương
+['Trí tuệ nhân tạo', 'Xử lý ngôn ngữ tự nhiên và các ứng dụng']
+Nguyễn Thị Oanh
+['Thị giác máy tính', 'Truy vấn dựa trên nội dung']
+Trịnh Anh Phúc
+['Khai phá dữ liệu', 'Giải thuật tốc độ cao', 'Cấu trúc dữ liệu tiên tiến']
+Trần Vĩnh Đức
+['Mật mã ứng dụng', 'Độ phức tạp tính toán', 'Mật mã ứng dụng', 'Nhập môn lý thuyết tính toán', 'Toán rời rạc']
+Phạm Quang Dũng
+['Tối ưu hóa tổ hợp', 'Thuật toán và đồ thị']
+Đỗ Phan Thuận
+['Lý thuyết đồ thị và tổ hợp', 'Tối ưu hóa', 'Trí tuệ nhân tạo']
+Muriel VISANI
+['Thị giác máy tính', 'Học máy (bao gồm cả học sâu)', 'Nhận dạng mẫu']
+Trần Nhật Hóa
+['Công nghệ phần mềm;', 'Đảm bảo chất lượng phần mềm;', 'Phân tích và xử lý dữ liệu.']
+Thân Quang Khoát
+['Trí tuệ nhân tạo', 'Khoa học dữ liệu', 'Khoa học máy tính']
+Nguyễn Khánh Phương
+['Các giải thuật và tối ưu hóa', 'Tính toán hiệu năng cao', 'Khoa học dữ liệu']
+Nguyễn Nhất Hải
+['Xử lý ngôn ngữ tự nhiên', 'Thị giác máy tính', 'Hệ thống phân tán (Blockchain)', 'Mạng cảm biến không dây và mạng internet vạn vật']
+Nguyễn Thanh Hùng
+['Tạo mô hình, xây dựng, kiểm thử phần mềm', 'EduTech']
+Nguyễn Phi Lê
+['Mạng cảm biến không dây và mạng internet vạn vật', 'Mạng MEC', 'Tối ưu hoá giao thức mạng', 'Tối ưu hoá việc triển khai mạng', 'Điều hành tài nguyên mạng', 'Học tăng cường']
+Nguyễn Thị Thu Trang
+['Tổng hợp tiếng nói', 'Xử lý ngôn ngữ tự nhiên']
+Đỗ Tuấn Anh
+['Công nghệ chuỗi khối', 'Công nghệ trò chơi', 'Cơ sở dữ liệu', 'Hệ điều hành']
+Nguyễn Tuấn Dũng
+['Phần mềm tài chính công nghệ cao', 'Hệ điều hành mã mở', 'An toàn thông tin']
+Nguyễn Hồng Phương
+['Khai phá dữ liệu', 'Tích hợp dữ liệu', 'Cơ sở dữ liệu']
+Ban Hà Bằng
+['Đồ thị', 'Tối ưu hóa', 'Trí tuệ nhân tạo']
+Đỗ Quốc Huy
+['Xe tự hành', 'An toàn thông tin', 'Hệ Điều Hành']
+Bùi Thị Mai Anh
+['Công nghệ phần mềm', 'Công nghệ thông tin áp dụng trong sinh học', 'Xử lý ngôn ngữ tự nhiên', 'Mô phỏng các hệ thống phức tạp']
+Nguyễn Mạnh Tuấn
+['Web và dịch vụ web', 'An toàn và bảo mật thông tin', 'Trí tuệ kinh doanh', 'Đánh giá an toàn cho các hệ thống thông tin theo cấp độ']
+Vũ Đức Vượng
+['Phát triển phần mềm ứng dụng', 'Đào tạo từ xa, Thương mại điện tử ', 'Hệ thống thông tin / Erp / MRP', 'Phát triển phần mềm trên .net, các ứng dụng trên mobile, web']
+Nguyễn Kiêm Hiếu
+['Xử lý ngôn ngữ tự nhiên', 'Trích rút thông tin']
+Nguyễn Bình Minh
+['Các hệ thống phân tán', 'Phân tích dữ liệu']
+Nguyễn Bá Ngọc
+['Tìm kiếm thông tin']
+Nguyễn Duy Hiệp
+['Khai phá dữ liệu lớn', 'Thị giác máy', 'Học sâu']
+Nguyễn Tiến Thành
+['Công nghệ phần mềm', 'Tính toán hiệu năng cao', 'Mạng điều khiển tự động']
+Trịnh Thành Trung
+['Đồ họa máy tính và phát triển trò chơi', 'Metaverse và các hệ thống thực tế ảo (VR, AR, XR)', 'Trí tuệ nhân tạo trong game và các hệ thống tác tử thông minh', 'Thiết kế giao diện và trải nghiệm người dùng']
+Đỗ Bá Lâm
+['Web ngữ nghĩa', 'Tích hợp dữ liệu', 'Công nghệ chuỗi khối']
+Trần Việt Trung
+['Dữ liệu lớn', 'Hiểu ngôn ngữ tự nhiên', 'Học máy ứng dụng']
+Đinh Viết Sang
+['Thị giác máy tính', 'Học máy', 'Học sâu']
+Trịnh Tuấn Đạt
+['Web ngữ nghĩa', 'An toàn an ninh', 'Thị giác máy tính']
+Trần Đình Khang
+['Các hệ thống thông minh và hệ trợ giúp quyết định', 'Logic mờ và suy luận xấp xỉ', 'Trí tuệ nhân tạo']
+Bùi Quốc Trung
+['Tối ưu tổ hợp', 'Ứng dụng học máy']
+Ngô Văn Linh
+['Học máy', 'Khai phá dữ liệu', 'Mô hình đồ thị xác suất', 'Hệ gợi ý']
+Đào Thành Chung
+['Hệ phân tán', 'Tính toán hiệu năng cao', 'Công nghệ chuỗi khối']
+Nguyễn Thị Thu Hương
+['Xử lý ngôn ngữ tự nhiên', 'Lý thuyết tính toán', 'Chương trình dịch']
+Nguyễn Thị Kim Anh
+['Phân tích dữ liệu', 'Phát hiện tri thức từ các cơ sở dữ liệu lớn và mạng xã hội,', 'Khai phá văn bản và Web']
+Michel Toulouse
+['Thuật toán, tối ưu hóa rời rạc', 'Ứng dụng phân tán']
+Huỳnh Quyết Thắng
+['Kỹ thuật phần mềm', 'Tối ưu đa mục tiêu', 'Phân tích và xử lý dữ liệu lớn']
+Lê Đức Trung
+['Kỹ nghệ phần mềm', 'Quản lý dự án Công nghệ thông tin và truyền thông', 'Kỹ năng mềm và Làm việc nhóm']
+Nguyễn Đức Anh
+['Học máy', 'Trí tuệ nhân tạo diễn giải', 'Tin-sinh học']

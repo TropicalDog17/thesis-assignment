@@ -1,21 +1,38 @@
+from __future__ import annotations
 import random
-
+import typing
+import fastrand
+import pygad
+from data_preprocessing import DataSource
+import numpy as np
 # This array stores the number of the teacher that advise the thesis i
-advisor = []
-a = 1
-b = 10
-similarity = [[]]
+a = 6
+b = 15
+
+# similarity[i][j] = k means that the similarity score between teacher i and thesis j is k
+# Read similarity score from similarity.txt
 
 
 class Assignment:
     # self.thesis[i] = j means that the teacher number j will be assigned to defense the thesis number i
-    thesis = []
 
-    def __init__(self, chromosome, generation):
-        for i in range(chromosome):
-            self.thesis[i] = chromosome[i]
+    def __init__(self, chromosome: typing.List, generation: int, data: DataSource):
+        self.data = data
+        self.advisor = []
+        self.similarity = []
+        self.num_of_thesis = data.num_of_thesis
+        self.num_of_teacher = data.num_of_teacher
+        if len(chromosome) != data.num_of_thesis:
+            raise Exception(
+                "Chromosome length is not equal to number of theses")
+
+        self.thesis = []
+        for i in range(len(chromosome)):
+            self.thesis.append(chromosome[i])
         self.generation = generation
-        self.fitness = 0
+        self.advisor = data.advisor
+        self.similarity = data.similarity
+        self.fitness = self.fitness()
 
     def __str__(self):
         return str(self.thesis) + " " + str(self.fitness)
@@ -27,62 +44,44 @@ class Assignment:
     # If the assignment is valid, return 0, otherwise return the negative score, based on number of violations
     def check_valid(self):
         score = 0
-
+        thesis_count = [0 for i in range(self.num_of_teacher)]
         # Teacher should not be defense the thesis that they advise
-        for i in range(len(self.thesis)):
-            if self.thesis[i] == advisor[i]:
+        for i in range(self.num_of_thesis):
+            if self.thesis[i] == self.advisor[i]:
                 score -= 1
-
         # The number of thesis that each teacher is assigned to should be in the range [a, b]
-        # a = 1, b = 10
-        for i in range(len(advisor)):
-            count = 0
-            for j in range(len(self.thesis)):
-                if self.thesis[j] == i:
-                    count += 1
-            if count < a or count > b:
-                score -= 1
-        # Similarity score between teacher and their assigned thesises should be in the range [0.5, 1]
-        # similarity[i][j] = k means that the similarity score between teacher i and thesis j is k
-        for i in range(len(advisor)):
-            for j in range(len(self.thesis)):
-                if self.thesis[j] == i:
-                    if similarity[i][j] < 0.5 or similarity[i][j] > 1:
-                        score -= 1
+        for i in range(self.num_of_thesis):
+            thesis_count[self.thesis[i]] += 1
+        for i in range(self.num_of_teacher):
+            if a <= thesis_count[i] <= b:
+                continue
+            elif thesis_count[i] < a:
+                score -= (a - thesis_count[i]) * 10
+            else:
+                score -= (thesis_count[i] - b) * 10
+        if max(thesis_count) - min(thesis_count) > 12:
+            score -= 1000
 
         return score
 
-    def __lt__(self, other):
-        if self.fitness == other.fitness:
-            return self.generation < other.generation
-        return self.fitness < other.fitness
+    def fitness(self):
+        valid_score = self.check_valid()
+        if valid_score < 0:
+            return valid_score
+        score = 0
 
-    # This function is used to mate two assignments
-    # Based on the cpp code above
-
-    def mate(self, other):
-        child_chromosome = []
-        for i in range(len(self.thesis)):
-            if random.randint(0, 1):
-                child_chromosome.append(self.thesis[i])
-            else:
-                child_chromosome.append(other.thesis[i])
-        # Randomly mutate some genes
-        for i in range(len(self.thesis)):
-            if random.random() < 0.5:
-                child_chromosome[i] = random.randint(0, len(advisor) - 1)
-        return Assignment(child_chromosome, self.generation)
-
-    def gen_random_chromosome(self):
-        chromosome = []
-        for i in range(len(advisor)):
-            chromosome.append(random.randint(0, len(advisor) - 1))
-        return chromosome
-# Given the initial population, this function returns the best assignment
+        for j in range(self.num_of_teacher):
+            for i in range(self.num_of_thesis):
+                if self.thesis[j] == i:
+                    score += self.similarity[i][j]
+        return score * 10
 
 
-def get_optimal_assignment(initial_pop):
-    # Sort the initial population
-    initial_pop.sort()
-    # Return the best assignment
-    return initial_pop[0]
+if __name__ == "__main__":
+    ga_instance = get_ga_instance()
+    ga_instance.run()
+    # Get list of the best solutions
+    solution, solution_fitness, solution_idx = ga_instance.best_solution()
+    print(solution)
+    print(solution_fitness)
+    print(solution_idx)
