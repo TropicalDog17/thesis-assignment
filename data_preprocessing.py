@@ -17,6 +17,9 @@ class DataSource:
         self.num_of_teacher = len(self.teachers)
         self.num_of_thesis = len(self.theses)
         self.assignment: list[AssignmentResponse] = []
+        self.min_count: int
+        self.max_count: int
+        self.minimum_similarity: float
 
     def __str__(self):
         return f"Data source with {len(self.teachers)} teachers and {len(self.theses)} theses"
@@ -80,7 +83,6 @@ class DataSource:
                 line = line.replace("\n", "").split(",")
                 # convert to float
                 line = [float(score) for score in line[1:]]
-                print(line)
                 similarity.append(line)
         self.similarity = similarity
 

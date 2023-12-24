@@ -74,7 +74,10 @@ def get_assignment() -> List[AssignmentResponse]:
 
 
 @app.get("/assignment/v2")
-def get_assignment_v2(limit: int = Query(default=10, ge=1, le=20)) -> List[AssignmentNew]:
+def get_assignment_v2(limit: int = Query(default=10, ge=1, le=20), min_count: int = Query(default=6), max_count: int = Query(default=15), minimum_similarity: float = Query(default=0.15)) -> List[AssignmentNew]:
+    data.min_count = min_count
+    data.max_count = max_count
+    data.minimum_similarity = minimum_similarity
     while data.assignment == []:
         ga_instance = get_ga_instance()
         ga_instance.run()

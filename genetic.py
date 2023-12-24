@@ -33,6 +33,9 @@ class Assignment:
         self.advisor = data.advisor
         self.similarity = data.similarity
         self.fitness = self.fitness()
+        self.min_count = data.min_count
+        self.max_count = data.max_count
+        self.minimum_similarity = data.minimum_similarity
 
     def __str__(self):
         return str(self.thesis) + " " + str(self.fitness)
@@ -45,6 +48,9 @@ class Assignment:
     def check_valid(self):
         score = 0
         thesis_count = [0 for i in range(self.num_of_teacher)]
+        a = self.data.min_count
+        b = self.data.max_count
+        minimum_similarity = self.data.minimum_similarity
         # Teacher should not be defense the thesis that they advise
         for i in range(self.num_of_thesis):
             if self.thesis[i] == self.advisor[i]:
@@ -62,6 +68,13 @@ class Assignment:
         if max(thesis_count) - min(thesis_count) > 12:
             score -= 1000
 
+        # The similarity score between teacher and thesis should be greater than minimum_similarity
+        for i in range(self.num_of_teacher):
+            for j in range(self.num_of_thesis):
+                if self.thesis[j] == i:
+                    if self.similarity[j][i] < minimum_similarity:
+                        score -= 1
+
         return score
 
     def fitness(self):
@@ -77,11 +90,11 @@ class Assignment:
         return score * 10
 
 
-if __name__ == "__main__":
-    ga_instance = get_ga_instance()
-    ga_instance.run()
-    # Get list of the best solutions
-    solution, solution_fitness, solution_idx = ga_instance.best_solution()
-    print(solution)
-    print(solution_fitness)
-    print(solution_idx)
+# if __name__ == "__main__":
+#     ga_instance = get_ga_instance()
+#     ga_instance.run()
+#     # Get list of the best solutions
+#     solution, solution_fitness, solution_idx = ga_instance.best_solution()
+#     print(solution)
+#     print(solution_fitness)
+#     print(solution_idx)
