@@ -1,3 +1,4 @@
+from fastapi.middleware.cors import CORSMiddleware
 from typing import Union, List
 import pygad
 from pydantic import BaseModel
@@ -8,6 +9,20 @@ from genetic import Assignment
 from schema import Teacher, Thesis, AssignmentResponse, AssignmentNew, TeacherAssigment, ThesisInfo
 app = FastAPI()
 data = DataSource()
+origins = [
+    "http://localhost.tiangolo.com",
+    "https://localhost.tiangolo.com",
+    "http://localhost",
+    "http://localhost:8080",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")
@@ -61,7 +76,10 @@ def read_advisor(thesis_id: int):
 
 
 @app.get("/advisors")
-def get_add_advisors():
+def get_all_advisors():
+    """Get all advisors of theses
+
+    """
     return data.advisor
 
 
@@ -74,7 +92,15 @@ def get_assignment() -> List[AssignmentResponse]:
 
 
 @app.get("/assignment/v2")
-def get_assignment_v2(limit: int = Query(default=10, ge=1, le=20), min_count: int = Query(default=6), max_count: int = Query(default=15), minimum_similarity: float = Query(default=0.15)) -> List[AssignmentNew]:
+def get_assignment_v2(limit: int = Query(default=10, ge=1, le=20), min_count: int = Query(default=6), max_count: int = Query(default=15), minimum_similarity: float = Query(default=0.1)) -> List[AssignmentNew]:
+    """ Get assignment with given parameters
+
+    Args:\n
+        limit (int, optional): Limit number of results. Defaults to 10.\n
+        min_count (int, optional): Minimum number of thesis each teacher is assigned to. Defaults to 6.\n
+        max_count (int, optional): Maximum number of thesis each teacher is assigned to. Defaults to 15.\n
+        minimum_similarity (float, optional): Minimum similarity score between teacher and thesis. Defaults to 0.1.    
+    """
     data.min_count = min_count
     data.max_count = max_count
     data.minimum_similarity = minimum_similarity
