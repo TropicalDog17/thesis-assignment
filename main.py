@@ -35,8 +35,8 @@ def read_thesis(thesis_id: int):
     return data.theses[thesis_id]
 
 
-@app.get("/similarity")
-def read_similarity():
+@app.get("/similarities")
+def get_all_similarities():
     return data.similarity
 
 # example
@@ -60,8 +60,8 @@ def read_advisor(thesis_id: int):
     return {"teacher": teacher_name, "thesis": thesis_name, "student": student_name, "teacher_id": teacher_id}
 
 
-@app.get("/advisor")
-def read_advisors():
+@app.get("/advisors")
+def get_add_advisors():
     return data.advisor
 
 
@@ -71,8 +71,6 @@ def get_assignment() -> List[AssignmentResponse]:
     ga_instance.run()
     data.assignment.sort(key=lambda x: x.fitness, reverse=True)
     return data.assignment
-
-# limit
 
 
 @app.get("/assignment/v2")
